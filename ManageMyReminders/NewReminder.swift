@@ -62,8 +62,11 @@ class NewReminder: UIViewController {
     }
     
     func addDate() {
+        let formatter:NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
         // Asignamos la fecha del date picker al text field
-        self.dateTextField.text = self.datePicker.date.description
+        self.dateTextField.text = formatter.stringFromDate(self.datePicker.date)
     }
 
     /*
